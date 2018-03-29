@@ -1,7 +1,7 @@
 <div class = "container">
 
 <h1><%= @entry.title %></h1>
-  <div class="body"><p><%= @entry.body %></p>
+  <div class="body"><p><%=  sanitize(@entry.body) %></p>
   </div>
 
 <%= link_to "<< Back to Entries List", entries_path %>
