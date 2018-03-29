@@ -4,17 +4,22 @@ class EntriesController < ApplicationController
     @entry = Entry.all
   end
 
+  def new
+    @entry = Entry.new
+  end
+
   def show
     @entry = Entry.find(params[:id])
   end
 
   def create
     @entry = Entry.create(entry_params)
-    if @entry.invalid?
+    if @entry.valid?
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   def about

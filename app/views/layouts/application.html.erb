@@ -1,86 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Generalist</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Generalist</title>
+  <%= csrf_meta_tags %>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="container">
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
       <%= link_to 'The Generalist', root_path , class: "navbar-brand" %>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <li class="nav-item">
-          <%= link_to '#', class:'nav-link' do %>
-          <i class="fa fa-home"></i>
-          <% end %>
-        </ul>
-        <div class="row">
-          <ul class="nav nav-navbar navbar-right">
-            <li class="nav-item active">
-              <!-- Button trigger modal -->
-              <%= link_to 'Contribute', '#', class: "nav-link",  data: {toggle: 'modal', target: '#myModal'} %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to 'About us', about_path , class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to 'Contact', '#' , class: "nav-link" %>
-            </li>
+            <%= link_to '#', class:'nav-link' do %>
+            <i class="fa fa-home"></i>
+            <% end %>
           </ul>
+          <div class="row">
+            <ul class="nav nav-navbar navbar-right">
+              <li class="nav-item active">
+
+                <%= link_to 'Contribute', new_entry_path , class: "nav-link" %>
+                <!-- Button trigger modal -->
+                <!-- <%= link_to 'Contribute', '#', class: "nav-link",  data: {toggle: 'modal', target: '#myModal'} %> -->
+              </li>
+              <li class="nav-item active">
+                <%= link_to 'About us', about_path , class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+                <%= mail_to "bryan@roguedevs.io", 'Contact', class: "nav-link" %>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-</div> <!-- /container -->
+      </nav>
+    </div> <!-- /container -->
 
 
 
 
 
-   <!-- Modal -->
-   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-     <div class="modal-dialog" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">×</span>
-           </button>
-           <h4 class="modal-title" id="myModalLabel">Contribute</h4>
-         </div>
-         <%= simple_form_for Entry.create do |f| %>
-         <div class="modal-body">
-               <%= f.input :title%>
-               <br />
-               <%= f.input :body%>
-           </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           <%= f.submit 'Create', class: 'btn btn-success' %>
-         </div>
-         <%end %>
-       </div>
-     </div>
-   </div>
+    <!-- Modal
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+  <h4 class="modal-title" id="myModalLabel">Contribute</h4>
+</div>
+<%= simple_form_for Entry.create do |f| %>
+<div class="modal-body">
+<%= f.input :title%>
+<br />
+<%= f.input :body%>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<%= f.submit 'Create', class: 'btn btn-success' %>
+</div>
+<%end %>
+</div>
+</div>
+</div>
+-->
+<br class="clear" />
 
+<%= yield %>
+<!-- Site footer -->
+<div id="footer">
+  <div class="container"
+  <p>Proudly hacked in Los Angeles, CA by <a href="http://roguedevs.io"> Rogue Developers </a></p>
+</div>
+<br class="clear" />
+</div>
 
-   <hr />
-
-   <br class="clear" />
-
-    <%= yield %>
-    <!-- Site footer -->
-    <div class="footer">
-      <div class="container"
-      <p>Proudly hacked in Los Angeles, CA by <a href="http://roguedevs.io"> Rogue Developers </a></p>
-    </div>
-  </div>
-    <br class="clear" />
-  </body>
+</body>
 </html>
