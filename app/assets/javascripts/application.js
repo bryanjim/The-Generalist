@@ -16,5 +16,5 @@
 //= require popper
 //= require tether
 //= require bootstrap-sprockets
-//= require trix
+//= require ckeditor/init
 //= require_tree .

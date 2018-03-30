@@ -1,8 +1,11 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
-.navbar-brand{
+.navbar-inverse .navbar-brand{
   font-family: 'Anton', sans-serif;
+  color: #A5A6A7;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .jumbotron {
@@ -24,11 +27,24 @@
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
   box-shadow: 0px 1px 3px #2a2a2a;
-  background: image_url('dark_embroidery.png');
+  background: image_url('zig_zag.png');
+}
+
+booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
 }
 
 .nav-link{
-  color: black;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
 }
 
 .help-block {
@@ -37,4 +53,16 @@
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
   margin: 10px;
+}
+
+#trix-toolbar-1 {
+  position:fixed;
+  background:#fff;
+  overflow-x:scroll;
+  white-space: nowrap;
+  width:90%;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

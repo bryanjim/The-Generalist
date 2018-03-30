@@ -1,12 +1,15 @@
-<br />
+<br class="clear" />
 <div class="container">
   <h1>Add a new Contribution</h1>
   <br />
     <%= simple_form_for @entry do |f| %>
-      <%= f.input :title, :placeholder => "Title here", :label => false %>
+      <div class="form-group">
+        <%= f.input :title, :placeholder => "Title here", :label => false, class: "form-control" %>
+      </div>
       <br/>
-      <%= f.text_area :body, :placeholder => "Input content here", id: :post_body, :rows => 8, :cols => 120 %>
-      <trix-editor input="post_body"></trix-editor>
+      <div class="form-group">
+        <%= f.input :body, :as => :ckeditor, :label => false, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
+    </div>
       <br />
       <br />
       <%= f.submit "Create", class: 'btn btn-success' %>
