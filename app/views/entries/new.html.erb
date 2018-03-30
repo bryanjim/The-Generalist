@@ -4,13 +4,12 @@
   <br />
     <%= simple_form_for @entry do |f| %>
       <div class="form-group">
-        <%= f.input :title, :placeholder => "Title here", :label => false, class: "form-control" %>
+        <%= f.input :title, :placeholder => "Title here", :label => false, class: "form-control"%>
       </div>
       <br/>
       <div class="form-group">
         <%= f.input :body, :as => :ckeditor, :label => false, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
     </div>
-      <br />
       <br />
       <%= f.submit "Create", class: 'btn btn-success' %>
 

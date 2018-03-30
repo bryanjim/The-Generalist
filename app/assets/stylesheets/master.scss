@@ -8,6 +8,12 @@
   letter-spacing: 1px;
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: #333;
+}
+
 .jumbotron {
   text-align: center;
 }
@@ -54,15 +60,16 @@ booyah-box {
   padding: 2px 8px 2px 8px;
   margin: 10px;
 }
-
-#trix-toolbar-1 {
-  position:fixed;
-  background:#fff;
-  overflow-x:scroll;
-  white-space: nowrap;
-  width:90%;
+.blog-post {
+    margin-bottom: 4rem;
 }
 
-::-webkit-scrollbar {
-    display: none;
+.blog-post-meta{
+  margin-bottom: 1.25rem;
+  color: #999;
+}
+
+.blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
 }
