@@ -4,8 +4,11 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-#Editor
+#CKeditor
 gem 'ckeditor', '~> 4.1'
+gem 'mini_magick'
+gem 'carrierwave', '~> 1.0'
+
 # simple_form
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -22,7 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'carrierwave', '~> 1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
